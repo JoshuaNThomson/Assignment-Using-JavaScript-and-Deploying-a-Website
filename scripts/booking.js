@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const listItems = document.querySelectorAll('#monday, #tuesday, #wednesday, #thursday, #friday, #half, #full'); 
     const halfButton = document.getElementById('half');
     const fullButton = document.getElementById('full');
+    fullButton.style.backgroundColor = '#E5AF42';
 
     listItems.forEach(item => {
         item.addEventListener('click', function() {
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('clicked');
                 this.style.backgroundColor = '#E5AF42';
             }
+            const newTotalCost = calculateCost();
+            document.getElementById('calculated-cost').innerHTML = newTotalCost;
         });
     });
 
